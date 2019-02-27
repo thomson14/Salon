@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".NewEmployees"
+    android:padding="10dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Employee"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:textSize="30dp"/>
+
+
+            //FOR EMPLOYEE NAME
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Employee Name:"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_person_green_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+
+            //FOR CONTACT / MOBILE NUMBER
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Contact / Mobile No:"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact / Mobile No"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+            //FOR DESIGNATION
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Designation:"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Designation"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_person_green_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+
+            //FOR IN TIME
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="In Time"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/edtInTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="In Time"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_access_time_green_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+            //FOR OUT TIME
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Out Time"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/edtOutTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="out Time"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_access_time_green_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+            //FOR WEEKLY
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Weekly Off"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/autoWeekly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter week"
+                android:textColorHint="@color/white"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/ic_date_range_green_24dp"
+                android:drawablePadding="12dp"
+                android:layout_marginTop="12dp"/>
+
+
+
+            //SUBMIT BUTTON
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round_corner"
+                android:text="Submit"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+
+            //CLOSE BUTTON
+            <Button
+                android:id="@+id/btnClosed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round_corner"
+                android:text="close"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+</LinearLayout>
