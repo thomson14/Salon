@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuickBill">
+    tools:context=".QuickBill"
+    android:background="@color/black">
 
 
     <ScrollView
@@ -14,14 +15,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Bill"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="30sp"/>
+                    android:textSize="30sp"
+                    android:textColor="@color/white"/>
 
 
                 //BUTTON for bill for sale AND  bill history
@@ -57,46 +60,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Billed Date:"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:id="@+id/edtdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="select date"
+                    android:textColorHint="@color/white"
                     />
 
-                <Button
-                    android:id="@+id/btndate"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/button_round_corner"
-                    android:text="SELECT DATE"
-                    android:textColor="@color/white"
-                    />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mobile No:"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Mobile No."/>
+                    android:hint="Enter Mobile No."
+                    android:textColorHint="@color/white"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="Customer Name:"/>
+                    android:text="Customer Name:"
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Customer Name:"/>
+                    android:hint="Enter Customer Name:"
+                    android:textColorHint="@color/white"/>
 
 
                 <LinearLayout
@@ -118,6 +119,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Services"
+                            android:textColor="@color/white"
                            />
 
 
@@ -129,6 +131,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="For"
+                            android:textColor="@color/white"
                           />
 
 
@@ -155,6 +158,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Staff"
+                            android:textColor="@color/white"
                             />
 
                         <TextView
@@ -163,6 +167,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Quantity"
+                            android:textColor="@color/white"
                             />
 
 
@@ -188,6 +193,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Rate"
+                            android:textColor="@color/white"
                             />
 
 
@@ -197,18 +203,21 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Discount(%)"
+                            android:textColor="@color/white"
                             />
 
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter Rate"/>
+                            android:hint="Enter Rate"
+                            android:textColorHint="@color/white"/>
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Discount"/>
+                            android:hint="Discount"
+                            android:textColorHint="@color/white"/>
 
 
 
@@ -217,6 +226,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Total"
+                            android:textColor="@color/white"
                             />
 
 
@@ -224,26 +234,31 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
+                            android:textColor="@color/white"
                             />
 
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Toatal price"/>
+                            android:hint="Toatal price"
+                            android:textColorHint="@color/white"/>
 
                         //DEMO
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
+                            android:textColor="@color/white"
                             />
 
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Reset"/>
+                            android:text="Reset"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_round_corner"/>
 
 
 
@@ -253,6 +268,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
+                            android:textColor="@color/white"
                             />
 
 
@@ -261,6 +277,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Mode"
+                            android:textColor="@color/white"
                             />
 
                         <TextView
@@ -268,6 +285,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Received"
+                            android:textColor="@color/white"
                             />
 
 
@@ -284,7 +302,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="NaN"/>
+                            android:hint="NaN"
+                            android:textColorHint="@color/white"/>
 
 
 
@@ -295,6 +314,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
                             android:text="Remaining"
+                            android:textColor="@color/white"
                             />
 
                         <TextView
@@ -308,7 +328,8 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Remaining"/>
+                            android:hint="Remaining"
+                            android:textColorHint="@color/white"/>
 
                         <Spinner
                             android:id="@+id/spinnerBillStatus"
@@ -327,7 +348,9 @@
                             android:id="@+id/buttonsubmit"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="submit"/>
+                            android:text="submit"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_round_corner"/>
 
 
 

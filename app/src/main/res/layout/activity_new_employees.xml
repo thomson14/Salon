@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Employee"
@@ -30,6 +31,7 @@
 
             //FOR EMPLOYEE NAME
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -38,7 +40,7 @@
                 android:layout_marginTop="30dp"/>
 
             <EditText
-                android:id="@+id/edit1"
+                android:id="@+id/employeeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter name"
@@ -61,7 +63,7 @@
                 android:layout_marginTop="30dp"/>
 
             <EditText
-
+                android:id="@+id/contactMobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contact / Mobile No"
@@ -84,7 +86,7 @@
                 android:layout_marginTop="30dp"/>
 
             <EditText
-
+                android:id="@+id/designation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Designation"

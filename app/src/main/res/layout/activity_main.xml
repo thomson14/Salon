@@ -94,25 +94,25 @@
 
                     <Button
                         android:id="@+id/btnLogin"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Login"
                         android:textSize="20sp"
                         android:layout_marginTop="50dp"
                         android:textColor="#fff"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@drawable/button_round_corner"
                         android:layout_margin="5dp"
                         />
 
                     <Button
                         android:id="@+id/btnsignUp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Register"
                         android:textSize="20sp"
                         android:layout_marginTop="50dp"
                         android:textColor="#fff"
-                        android:background="@color/colorPrimaryDark"
+                       android:background="@drawable/button_round_corner"
                         android:layout_margin="5dp"
                         />
 

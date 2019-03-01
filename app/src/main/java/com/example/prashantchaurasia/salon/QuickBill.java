@@ -42,9 +42,8 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
              spinnerServices = (Spinner) findViewById(R.id.spinner1);
              btnBillforSale = (Button)  findViewById(R.id.btnBillforSale);
 
-             btnDate = (Button) findViewById(R.id.btndate);
+
              edtDate = (EditText)  findViewById(R.id.edtdate);
-             btnDate.setOnClickListener(this);
              edtDate.setOnClickListener(this);
 
              //  BUTTON FOR BILL FOR SALE
@@ -159,18 +158,18 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
 
     }
 
-
+    //FOR DATE IN EDITTEXT
     @Override
-    public void onClick(View v) {
-        if (v == btnDate) {
+    public void onClick(View v)
+    {
+        if (v == edtDate)
+        {
 
             // Get Current Date
             final Calendar c = Calendar.getInstance();
             mYear = c.get(Calendar.YEAR);
             mMonth = c.get(Calendar.MONTH);
             mDay = c.get(Calendar.DAY_OF_MONTH);
-
-
             DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                     new DatePickerDialog.OnDateSetListener() {
 

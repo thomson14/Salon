@@ -34,9 +34,7 @@ public class Main3Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         //cardViewQuickBill
-
         CardView cardViewQuickBill = (CardView) findViewById(R.id.cardViewQuickBill);
         CardView cardAttendance = (CardView) findViewById(R.id.cardAttendance);
 
@@ -108,18 +106,30 @@ public class Main3Activity extends AppCompatActivity
             // Handle the camera action
 
 
-        } else if (id == R.id.nav_Appointments) {
+        }
+        else if (id == R.id.nav_Appointments)
+        {
             Intent intent = new Intent(Main3Activity.this, BillForSale.class);
             startActivity(intent);
-        } else if (id == R.id.nav_Billing) {
+
+        }
+        else if (id == R.id.nav_Billing)
+        {
             Intent intent = new Intent(Main3Activity.this, QuickBill.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_Customer) {
-        } else if (id == R.id.nav_Staff) {
-            Intent intent = new Intent(Main3Activity.this, Staff.class);
+        }
+        else if (id == R.id.nav_Customer)
+        {
+        }
+        else if (id == R.id.nav_Staff)
+        {
+            Intent intent = new Intent(Main3Activity.this, NewEmployees.class);
             startActivity(intent);
-        } else if (id == R.id.nav_send) {
+
+        }
+        else if (id == R.id.nav_send)
+        {
 
         }
 

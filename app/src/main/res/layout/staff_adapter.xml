@@ -11,26 +11,153 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:elevation="30dp"
         app:cardBackgroundColor="@color/DarkGreen"
         app:cardCornerRadius="20dp"
         android:layout_margin="20dp">
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:rowCount="4"
+            android:columnCount="2"
+            android:layout_marginLeft="20dp"
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Attendance" />
+           >
 
-        </LinearLayout>
+            //EMPLOYEE NAME
+
+            <TextView
+                android:id="@+id/employeeNameDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employee Name:"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/employeeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+
+            //Contact / Mobile No
+            <TextView
+                android:id="@+id/mobileNumberDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact / Mobile No:"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:id="@+id/mobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+                //DESIGNATION
+
+            <TextView
+                android:id="@+id/DesignationDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Designation"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:id="@+id/Designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="your choice"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+
+            //In Time
+            <TextView
+                android:id="@+id/InTimeStaffDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Time:"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:id="@+id/InTimeStaff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Time"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+
+            //Out Time
+            <TextView
+                android:id="@+id/OutTimeStaffDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Out Time:"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:id="@+id/OutTimeStaff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Out Time"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            //WEEKLY OFF
+            <TextView
+                android:id="@+id/WeeklyOffDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly Off:"
+                android:textColor="@color/white"
+                android:textSize="15dp"/>
+
+
+            <TextView
+                android:id="@+id/WeeklyOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="week"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <Button
+                android:id="@+id/btnActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                />
+
+            <Button
+                android:id="@+id/btnInActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Active"
+                />
+        </GridLayout>
 
     </android.support.v7.widget.CardView>
 

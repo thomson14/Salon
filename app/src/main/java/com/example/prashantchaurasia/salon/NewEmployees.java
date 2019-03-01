@@ -1,6 +1,7 @@
 package com.example.prashantchaurasia.salon;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class NewEmployees extends AppCompatActivity implements AdapterView.OnItemSelectedListener ,View.OnClickListener {
@@ -21,7 +23,7 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         AutoCompleteTextView autoWeekly;
         Button btnSubmit,btnClose;
         EditText edtOutTime,edtInTime;
-
+        EditText employeeName,ContactMobile,designation;
         private int mYear, mMonth, mDay, mHour, mMinute;
 
 
@@ -34,7 +36,9 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         btnSubmit = (Button)  findViewById(R.id.btnSubmit);
         btnClose = (Button) findViewById(R.id.btnClosed);
 
-
+        employeeName = findViewById(R.id.employeeName);
+        ContactMobile = findViewById(R.id.contactMobile);
+        designation = findViewById(R.id.designation);
         edtInTime = (EditText) findViewById(R.id.edtInTime);
         edtInTime.setOnClickListener(this);
         edtOutTime = (EditText) findViewById(R.id.edtOutTime);
@@ -56,6 +60,28 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String Ename,CMobile,Stringdesignation,inTime,outTime,offDay;
+
+                Ename = employeeName.getText().toString();
+                CMobile  = ContactMobile.getText().toString();
+                Stringdesignation = designation.getText().toString();
+                inTime = edtInTime.getText().toString();
+                outTime = edtOutTime.getText().toString();
+                offDay = autoWeekly.getText().toString();
+
+                Employee employee =  new Employee(Ename,CMobile,Stringdesignation,inTime,outTime,offDay);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("employee",employee);
+                startActivity(new Intent(NewEmployees.this,Staff.class).putExtra("bundle",bundle));
+
+
+                   // Bundle bundle = new Bundle();
+                    //bundle.putString("employeeName");
+                  /*  String employeeName = bundle.getString("employeeName");
+                    String ContactMobile = bundle.getString("contactMobile");
+                    String designstion = bundle.getString("designation");*/
+
 
 
 
