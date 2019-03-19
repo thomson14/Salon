@@ -20,7 +20,8 @@ public class Employee implements Parcelable {
         this.offDay = offDay;
     }
 
-    protected Employee(Parcel in) {
+    protected Employee(Parcel in)
+    {
         name = in.readString();
         designation = in.readString();
         mobile = in.readString();

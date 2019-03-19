@@ -62,6 +62,7 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.ProgrmmingVi
 
     @Override
     public int getItemCount()
+
     {
         return data.size();
     }

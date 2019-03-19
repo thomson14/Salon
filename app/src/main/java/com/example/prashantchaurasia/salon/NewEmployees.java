@@ -37,10 +37,15 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         btnClose = (Button) findViewById(R.id.btnClosed);
 
         employeeName = findViewById(R.id.employeeName);
+
         ContactMobile = findViewById(R.id.contactMobile);
+
         designation = findViewById(R.id.designation);
+
+
         edtInTime = (EditText) findViewById(R.id.edtInTime);
         edtInTime.setOnClickListener(this);
+
         edtOutTime = (EditText) findViewById(R.id.edtOutTime);
         edtOutTime.setOnClickListener(this);
 
