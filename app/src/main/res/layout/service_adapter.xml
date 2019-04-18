@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="#000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="30dp"
+        app:cardBackgroundColor="@color/DarkGreen"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="20dp">
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:rowCount="4"
+        android:columnCount="2"
+        >
+
+        //Service Name
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Name"
+            android:textColor="@color/white"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/adapterForServiceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+        //For Male
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rates For Male in Rs:"
+            android:textColor="@color/white"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/AdapterForMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="number"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+        //DESIGNATION
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rates For Female Rs:"
+            android:textColor="@color/white"
+            android:textSize="15dp"/>
+
+
+        <TextView
+            android:id="@+id/AdapterForFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your choice"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+
+       //For Male Child
+        <TextView
+            android:id="@+id/InTimeStaffDemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rates For Male Child Rs:"
+            android:textColor="@color/white"
+            android:textSize="15dp"/>
+
+
+        <TextView
+            android:id="@+id/adapterForMaleChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Male Child"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rates For Female Child Rs:"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/adapterForFemaleChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Female Child"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+
+    </GridLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+</LinearLayout>

@@ -26,7 +26,6 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         EditText employeeName,ContactMobile,designation;
         private int mYear, mMonth, mDay, mHour, mMinute;
 
-
         String[] autoCompleteweekly = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +74,9 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
                 outTime = edtOutTime.getText().toString();
                 offDay = autoWeekly.getText().toString();
 
-                Employee employee =  new Employee(Ename,CMobile,Stringdesignation,inTime,outTime,offDay);
+             //   Employee employee =  new Employee(Ename,CMobile,Stringdesignation,inTime,outTime,offDay);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("employee",employee);
+               // bundle.putParcelable("employee",employee);
                 startActivity(new Intent(NewEmployees.this,Staff.class).putExtra("bundle",bundle));
 
 

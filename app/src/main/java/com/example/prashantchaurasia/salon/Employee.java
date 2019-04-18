@@ -4,30 +4,31 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Employee implements Parcelable {
-    private String name ;
-    private String designation ;
-    private String mobile ;
-    private String inTime ;
-    private String outTime ;
-    private String offDay ;
+    private String name ,designation ,intime,outtime ,weekoff ,mobile ;
+    private int eid,status,uid;
 
-    public Employee(String name, String designation, String mobile, String inTime, String outTime, String offDay) {
+    public Employee(String name, String designation, String intime, String outtime, String weekoff, String mobile, int eid, int status, int uid) {
         this.name = name;
         this.designation = designation;
+        this.intime = intime;
+        this.outtime = outtime;
+        this.weekoff = weekoff;
         this.mobile = mobile;
-        this.inTime = inTime;
-        this.outTime = outTime;
-        this.offDay = offDay;
+        this.eid = eid;
+        this.status = status;
+        this.uid = uid;
     }
 
-    protected Employee(Parcel in)
-    {
+    protected Employee(Parcel in) {
         name = in.readString();
         designation = in.readString();
+        intime = in.readString();
+        outtime = in.readString();
+        weekoff = in.readString();
         mobile = in.readString();
-        inTime = in.readString();
-        outTime = in.readString();
-        offDay = in.readString();
+        eid = in.readInt();
+        status = in.readInt();
+        uid = in.readInt();
     }
 
     public static final Creator<Employee> CREATOR = new Creator<Employee>() {
@@ -58,6 +59,30 @@ public class Employee implements Parcelable {
         this.designation = designation;
     }
 
+    public String getIntime() {
+        return intime;
+    }
+
+    public void setIntime(String intime) {
+        this.intime = intime;
+    }
+
+    public String getOuttime() {
+        return outtime;
+    }
+
+    public void setOuttime(String outtime) {
+        this.outtime = outtime;
+    }
+
+    public String getWeekoff() {
+        return weekoff;
+    }
+
+    public void setWeekoff(String weekoff) {
+        this.weekoff = weekoff;
+    }
+
     public String getMobile() {
         return mobile;
     }
@@ -66,28 +91,28 @@ public class Employee implements Parcelable {
         this.mobile = mobile;
     }
 
-    public String getInTime() {
-        return inTime;
+    public int getEid() {
+        return eid;
     }
 
-    public void setInTime(String inTime) {
-        this.inTime = inTime;
+    public void setEid(int eid) {
+        this.eid = eid;
     }
 
-    public String getOutTime() {
-        return outTime;
+    public int getStatus() {
+        return status;
     }
 
-    public void setOutTime(String outTime) {
-        this.outTime = outTime;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
-    public String getOffDay() {
-        return offDay;
+    public int getUid() {
+        return uid;
     }
 
-    public void setOffDay(String offDay) {
-        this.offDay = offDay;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     @Override
@@ -96,12 +121,15 @@ public class Employee implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(designation);
-        dest.writeString(mobile);
-        dest.writeString(inTime);
-        dest.writeString(outTime);
-        dest.writeString(offDay);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(designation);
+        parcel.writeString(intime);
+        parcel.writeString(outtime);
+        parcel.writeString(weekoff);
+        parcel.writeString(mobile);
+        parcel.writeInt(eid);
+        parcel.writeInt(status);
+        parcel.writeInt(uid);
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".SignUp">
 
 
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/black"
+
         android:padding="50dp"
         >
 
@@ -44,15 +44,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Business Name"
+            android:text="Name"
 
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
+                android:id="@+id/regName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Salon Name"
+                android:hint="Enter Name"
                 android:textColorHint="@color/white"
                 android:layout_margin="8dp"
                 android:textColor="@color/white"/>
@@ -60,36 +61,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mobile"
+            android:text="Email"
             android:textSize="20sp"
-
             android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
+                android:id="@+id/regEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="@color/white"
-                android:hint="Owner Mobile No"
+                android:hint="Enter Email"
                 android:layout_margin="8dp"
                 android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User Name"
+            android:text="Password"
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"/>
 
 
         <EditText
+            android:id="@+id/regPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User Name"
+            android:hint="Enter password"
             android:textColorHint="@color/white"
             android:layout_margin="8dp"
             android:textColor="@color/white"/>
 
-        <TextView
+     <!--   <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password"
@@ -103,20 +105,21 @@
             android:hint="password"
             android:textColorHint="@color/white"
             android:layout_margin="8dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"/>-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="Mobile"
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"/>
 
 
         <EditText
+            android:id="@+id/regMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Sample@gmail.com"
+            android:hint="Enter mobile no."
             android:textColorHint="@color/white"
             android:layout_margin="8dp"
             android:textColor="@color/white"/>
@@ -133,17 +136,13 @@
 
 
         <Button
+            android:id="@+id/regButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             android:text="Register"
             android:textSize="20sp"
             android:layout_gravity="center_horizontal"/>
-
-
-
-
-
 
     </LinearLayout>
 

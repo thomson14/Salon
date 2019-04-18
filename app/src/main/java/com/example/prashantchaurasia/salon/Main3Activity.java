@@ -1,10 +1,13 @@
 package com.example.prashantchaurasia.salon;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,10 +17,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class Main3Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+public class Main3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    SharedPreferences loginPreferences;
+    TextView UsernameNavHeader ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +30,48 @@ public class Main3Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //NAVHEADER
+
+        loginPreferences = this.getSharedPreferences("loginprefs",MODE_PRIVATE);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        UsernameNavHeader = headerView.findViewById(R.id.user);
+        String name = loginPreferences.getString("username"," ") ;
+        Log.d("break", "onCreate: "+name);
+        UsernameNavHeader.setText(name);
+        Log.d("NavName","NavHeaderNAme" + UsernameNavHeader);
+
+
+        String EmailHeader = loginPreferences.getString("email"," ");
+        TextView UserEmailNavHeader = headerView.findViewById(R.id.UserEmailNavHeader);
+        Log.d("mail", "onCreate: "+EmailHeader);
+        UserEmailNavHeader.setText(EmailHeader);
+
+
+
+        // SHAREPEREFERENCE SAVE VALUES
+        String LVisit = loginPreferences.getString("last_login"," ");
+        TextView LastVisitCard = findViewById(R.id.lastVisitCard);
+        LastVisitCard.setText(LVisit);
+
+        String ActDate = loginPreferences.getString("actdate"," ");
+        TextView ActivateDate = findViewById(R.id.ActivateDate);
+        ActivateDate.setText(ActDate);
+
+        String ExDate = loginPreferences.getString("expdate"," ");
+        TextView  ExpiryDate= findViewById(R.id.ExpiryDate);
+        ExpiryDate.setText(ExDate);
+        //ExpiryDate.setText(ExDate);
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         //cardViewQuickBill
         CardView cardViewQuickBill = (CardView) findViewById(R.id.cardViewQuickBill);
         CardView cardAttendance = (CardView) findViewById(R.id.cardAttendance);
@@ -62,9 +100,27 @@ public class Main3Activity extends AppCompatActivity
         });
 
 
+
+
     }
 
-    @Override
+
+
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent setIntent = new Intent(Intent.ACTION_MAIN);
+        setIntent.addCategory(Intent.CATEGORY_HOME);
+        setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(setIntent);
+
+        return;
+    }
+
+
+
+
+
+  /*  @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -72,7 +128,7 @@ public class Main3Activity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,6 +146,14 @@ public class Main3Activity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            SharedPreferences preferences = getSharedPreferences("saveLogin", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+           // editor.clear();
+            editor.remove("saveLogin");
+            editor.commit();
+            finish();
+
             return true;
         }
 
@@ -124,7 +188,7 @@ public class Main3Activity extends AppCompatActivity
         }
         else if (id == R.id.nav_Staff)
         {
-            Intent intent = new Intent(Main3Activity.this, NewEmployees.class);
+            Intent intent = new Intent(Main3Activity.this, Staff.class);
             startActivity(intent);
 
         }
@@ -132,6 +196,12 @@ public class Main3Activity extends AppCompatActivity
         {
 
         }
+        else if (id == R.id.nav_Services){
+
+            Intent intent = new Intent(Main3Activity.this,Services.class);
+            startActivity(intent);
+        }
+
 
 
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

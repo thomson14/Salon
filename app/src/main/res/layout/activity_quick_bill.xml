@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
-    tools:context=".QuickBill"
-    android:background="@color/black">
+    tools:context=".QuickBill">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,6 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="select date"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     />
 
@@ -94,156 +97,98 @@
                     android:textColor="@color/white"/>
 
                 <EditText
+                    android:id="@+id/cname"
+                    style="@style/Widget.AppCompat.EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter Customer Name:"
-                    android:textColorHint="@color/white"/>
+                    android:textColorHint="@color/white" />
 
+
+
+        //Services
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+          >
+
+            <Button
+                android:id="@+id/addServices"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round_corner"
+                android:text="+ Services"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white" />
+
+            //ADD Services And Reset Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/QuickBillRecycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+                        //End Grid OF GRID LAYOUT
+
+                //TOTAL AMOUNT
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+
+            >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payable Amount:"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Toatal price"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"/>
+        </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="40dp">
+                   >
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="30dp"
+                        app:cardBackgroundColor="@color/DarkGreen"
+                        app:cardCornerRadius="20dp"
+                        android:layout_margin="20dp">
 
                     <GridLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:columnCount="2"
                         android:rowCount="3"
+                        android:layout_margin="40dp"
                         >
 
 
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Services"
-                            android:textColor="@color/white"
-                           />
-
-
-
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="For"
-                            android:textColor="@color/white"
-                          />
-
-
-
-                        <Spinner
-                            android:id="@+id/spinner1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
-
-                        </Spinner>
-
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
-
-
-                        </Spinner>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Staff"
-                            android:textColor="@color/white"
-                            />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Quantity"
-                            android:textColor="@color/white"
-                            />
-
-
-                        <Spinner
-                            android:id="@+id/spinnerStaff"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
-
-
-                        </Spinner>
-
-                        <Spinner
-                            android:id="@+id/spinnerQuantity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
-                        </Spinner>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Rate"
-                            android:textColor="@color/white"
-                            />
-
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Discount(%)"
-                            android:textColor="@color/white"
-                            />
-
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Enter Rate"
-                            android:textColorHint="@color/white"/>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Discount"
-                            android:textColorHint="@color/white"/>
-
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Total"
-                            android:textColor="@color/white"
-                            />
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:textColor="@color/white"
-                            />
-
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Toatal price"
-                            android:textColorHint="@color/white"/>
-
                         //DEMO
                         <TextView
                             android:layout_width="wrap_content"
@@ -251,16 +196,6 @@
                             android:textSize="20sp"
                             android:textColor="@color/white"
                             />
-
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Reset"
-                            android:textColor="@color/white"
-                            android:background="@drawable/button_round_corner"/>
-
-
 
 
                         //DEMO
@@ -276,18 +211,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
-                            android:text="Mode"
+                            android:text="Mode :"
                             android:textColor="@color/white"
                             />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Received"
-                            android:textColor="@color/white"
-                            />
-
 
                         <Spinner
                             android:id="@+id/spinnerMode"
@@ -295,6 +221,17 @@
                             android:layout_height="wrap_content"
                             >
                         </Spinner>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Received :"
+                            android:textColor="@color/white"
+                            />
+
+
+
 
 
 
@@ -305,31 +242,28 @@
                             android:hint="NaN"
                             android:textColorHint="@color/white"/>
 
-
-
-
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="20sp"
-                            android:text="Remaining"
+                            android:text="Remaining :"
                             android:textColor="@color/white"
                             />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Bill Status"
-                            />
-
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Remaining"
                             android:textColorHint="@color/white"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="Bill Status :"
+                            android:textColor="@color/white"
+                            />
 
                         <Spinner
                             android:id="@+id/spinnerBillStatus"
@@ -338,32 +272,20 @@
                             >
                         </Spinner>
 
-
-
-
-
-
-
-                        <Button
-                            android:id="@+id/buttonsubmit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="submit"
-                            android:textColor="@color/white"
-                            android:background="@drawable/button_round_corner"/>
-
-
-
                     </GridLayout>
-
-
-
-
-
+                    </android.support.v7.widget.CardView>
 
                 </LinearLayout>
 
 
+                <Button
+                    android:id="@+id/buttonsubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="submit"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="260dp"
+                    android:background="@drawable/button_round_corner"/>
 
 
 

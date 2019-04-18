@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".Services">
+
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btnAddServices"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round_corner"
+            android:layout_margin="10dp"
+            android:text="+ New Services"
+            android:textSize="25dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id = "@+id/searchText"
+        android:layout_width = "match_parent"
+        android:layout_height="50dp"
+        android:hint = "Search here.."
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ServiceRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

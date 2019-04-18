@@ -1,5 +1,6 @@
 package com.example.prashantchaurasia.salon;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,82 +15,64 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.ProgrmmingViewHolder> {
+public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.ViewHolder> {
 
-    CardView cardView;
-    TextView employeeNameDemo,InTimeStaffDemo,MobileNumberDemo,OutTimeStafDemo,WeeklyStaffDemo,DisignationDemo;
-    TextView employeeName,InTimeStaff,OutTimeSatff,MobileNumber,WeeklyStaff,Designation;
-    Button   btnActive,btnInActive;
+
+    private TextView employeeName,InTimeStaff,OutTimeSatff,MobileNumber,WeeklyStaff,Designation;
     private  ArrayList<Employee> data;
+    private Context context;
 
-    public StaffAdapter(ArrayList<Employee> data)
-    {
-
+    public StaffAdapter( Context context,ArrayList<Employee> data) {
+        this.context = context;
         this.data = data;
-
     }
 
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-    @NonNull
-    @Override
-    public ProgrmmingViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
-    {
-        LayoutInflater layoutInflater  = LayoutInflater.from(viewGroup.getContext());
-        View view = layoutInflater.inflate(R.layout.staff_adapter,viewGroup,false);
-        return new ProgrmmingViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ProgrmmingViewHolder progrmmingViewHolder, int i)
-    {
-        Employee title = data.get(i);
-        employeeName.setText(title.getName());
-
-        MobileNumber.setText(title.getMobile());
-
-        Designation.setText(title.getDesignation());
-
-        InTimeStaff.setText(title.getInTime());
-
-        OutTimeSatff.setText(title.getOutTime());
-
-        WeeklyStaff.setText(title.getOffDay());
-
-
-
-
-    }
-
-    @Override
-    public int getItemCount()
-
-    {
-        return data.size();
-    }
-
-    public class ProgrmmingViewHolder extends RecyclerView.ViewHolder{
-
-
-
-
-
-        public ProgrmmingViewHolder(@NonNull View itemView) {
+        public ViewHolder(final View itemView){
             super(itemView);
 
 
-            cardView = (CardView) itemView.findViewById(R.id.cardView);
-
-            employeeName = (TextView) itemView.findViewById(R.id.employeeName);
-            MobileNumber = (TextView) itemView.findViewById(R.id.mobileNumber);
-            InTimeStaff = (TextView) itemView.findViewById(R.id.InTimeStaff);
-            OutTimeSatff = (TextView) itemView.findViewById(R.id.OutTimeStaff);
-            WeeklyStaff = (TextView) itemView.findViewById(R.id.WeeklyOff);
+            employeeName = itemView.findViewById(R.id.employeeName1);
+            MobileNumber = itemView.findViewById(R.id.mobileNumber);
             Designation = itemView.findViewById(R.id.Designation);
+            InTimeStaff = itemView.findViewById(R.id.InTimeStaff);
+            OutTimeSatff = itemView.findViewById(R.id.OutTimeStaff);
+            WeeklyStaff = itemView.findViewById(R.id.WeeklyOff);
 
-            btnActive = itemView.findViewById(R.id.btnActive);
-            btnInActive = itemView.findViewById(R.id.btnInActive);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
         }
+
     }
 
+    @NonNull
+    @Override
+    public StaffAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.staff_adapter,viewGroup,false);
+        return new StaffAdapter.ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull StaffAdapter.ViewHolder viewHolder, int i) {
+
+        employeeName.setText(data.get(i).getName());
+        MobileNumber.setText(data.get(i).getMobile());
+        Designation.setText(data.get(i).getDesignation());
+        InTimeStaff.setText(data.get(i).getIntime());
+        OutTimeSatff.setText(data.get(i).getOuttime());
+        WeeklyStaff.setText(data.get(i).getWeekoff());
+        viewHolder.itemView.setTag(data.get(i));
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return data.size();
+    }
 }

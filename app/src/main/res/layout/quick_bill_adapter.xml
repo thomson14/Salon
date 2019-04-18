@@ -1,64 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".StaffAdapter">
-
+    android:layout_height="300dp"
+    android:background="#000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="260dp"
         android:elevation="30dp"
         app:cardBackgroundColor="@color/DarkGreen"
         app:cardCornerRadius="20dp"
         android:layout_margin="20dp">
 
+
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="260dp"
             android:rowCount="4"
             android:columnCount="2"
-            android:layout_marginLeft="20dp"
+            android:padding = "20dp"
+            >
 
-           >
-
-            //EMPLOYEE NAME
-
+            //Service Name
             <TextView
-                android:id="@+id/employeeNameDemo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Employee Name:"
+                android:text="Service :"
                 android:textColor="@color/white"
                 android:textSize="15dp"/>
 
-
             <TextView
-                android:id="@+id/employeeName1"
+                android:id="@+id/QBForServiceName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 />
-
-
-            //Contact / Mobile No
+            //For Male
             <TextView
-                android:id="@+id/mobileNumberDemo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contact / Mobile No:"
+                android:text="For :"
                 android:textColor="@color/white"
                 android:textSize="15dp"/>
-
-
             <TextView
-                android:id="@+id/mobileNumber"
+                android:id="@+id/QBAdapterFor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="number"
@@ -66,19 +55,19 @@
                 android:textColor="@color/white"
                 />
 
-                //DESIGNATION
+            //DESIGNATION
 
             <TextView
-                android:id="@+id/DesignationDemo"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Designation"
+                android:text="Staff :"
                 android:textColor="@color/white"
                 android:textSize="15dp"/>
 
 
             <TextView
-                android:id="@+id/Designation"
+                android:id="@+id/QBAdapterStaff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="your choice"
@@ -87,82 +76,87 @@
                 />
 
 
-            //In Time
+            //For Male Child
             <TextView
                 android:id="@+id/InTimeStaffDemo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="In Time:"
+                android:text="Quantity :"
                 android:textColor="@color/white"
                 android:textSize="15dp"/>
 
 
             <TextView
-                android:id="@+id/InTimeStaff"
+                android:id="@+id/QBadapterQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="In Time"
+                android:text="For Male Child"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate :"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/QBadapterRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For Female Child"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discount :"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/QBadapterDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For Female Child"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total :"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/QBadapterTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For Female Child"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 />
 
 
-            //Out Time
-            <TextView
-                android:id="@+id/OutTimeStaffDemo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Out Time:"
-                android:textColor="@color/white"
-                android:textSize="15dp"/>
 
 
-            <TextView
-                android:id="@+id/OutTimeStaff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Out Time"
-                android:padding="8dp"
-                android:textColor="@color/white"
-                />
 
-            //WEEKLY OFF
-            <TextView
-                android:id="@+id/WeeklyOffDemo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weekly Off:"
-                android:textColor="@color/white"
-                android:textSize="15dp"/>
-
-
-            <TextView
-                android:id="@+id/WeeklyOff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="week"
-                android:padding="8dp"
-                android:textColor="@color/white"
-                />
-
-            //button Acitve
-            <Button
-                android:id="@+id/btnActive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Active"
-                />
-
-            //button In Acitve
-            <Button
-                android:id="@+id/btnInActive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In Active"
-                />
 
         </GridLayout>
-
     </android.support.v7.widget.CardView>
+
+
 
 </LinearLayout>
