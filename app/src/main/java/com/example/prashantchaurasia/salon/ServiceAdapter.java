@@ -22,7 +22,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         private ArrayList<GetServices> service;
         private ArrayList<GetServices> servicesFull;
 
-        TextView serviceName , ForMaleRate , ForFemaleRate , ForChildMaleRate  , ForchildFemaleRate;
+       private TextView serviceName , ForMaleRate , ForFemaleRate , ForChildMaleRate  , ForchildFemaleRate;
 
 
         public ServiceAdapter(Context context , ArrayList<GetServices> service)
@@ -83,7 +83,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         return service.size();
     }
 
-  /*  @Override
+
     public  Filter getFilter()
     {
         return exampleFilter;
@@ -100,7 +100,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
                 for (GetServices item : servicesFull){
 
-                    if (item.getServiceName().toLowerCase().contains(filteredPattern)){
+                    if (item.getName().toLowerCase().contains(filteredPattern)){
                         filteredList.add(item);
                     }
                 }
@@ -111,14 +111,12 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
             return results;
 
         }
-
         @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
+        protected void publishResults(CharSequence charSequence,FilterResults filterResults) {
             service.clear();
             service.addAll((List) filterResults.values);
         }
-    };*/
+    };
 
 
 }

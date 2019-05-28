@@ -53,14 +53,13 @@ public class MainActivity extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btnsignUp);
 
         //sharedPreference
-        loginPreferences = this.getSharedPreferences("loginprefs",MODE_PRIVATE);
+        loginPreferences = getSharedPreferences("loginprefs",MODE_PRIVATE);
         saveLogin = loginPreferences.getBoolean("saveLogin",false);
 
         if(saveLogin)
         {
 
             startActivity(new Intent(MainActivity.this,Main3Activity.class));
-
                 name.setText(loginPreferences.getString("email",""));
                 password.setText(loginPreferences.getString("password",""));
         }else {
@@ -73,22 +72,9 @@ public class MainActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-         //    String   name1 = name.getText().toString();
-           //  String pass1 = password.getText().toString();
-
-
-
-
                 Encryption encryption = new Encryption(password.getText().toString());
                 String a = encryption.getEncryption();
                 password.setText(a);
-
-               // new Thread (new Task()).start();
-               // loginPrefsEditor.putBoolean("saveLogin", true);
-             //   loginPrefsEditor.putString("uid", name1);
-               // loginPrefsEditor.putString("p", pass1);
-                //loginPrefsEditor.commit();
                 login();
             }
 
@@ -105,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
     public void login(){
@@ -144,19 +129,23 @@ public class MainActivity extends AppCompatActivity {
                         if(flag)
                         {
                             loginPrefsEditor = loginPreferences.edit();
-                            loginPrefsEditor.putBoolean("savelogin",true);
+                            loginPrefsEditor.putBoolean("saveLogin",true);
                             try {
-
-
                                 loginPrefsEditor.putString("serve",jsonObject.getString("serve"));
                                 loginPrefsEditor.putString("last_login",jsonObject.getString("last_login"));
                                 loginPrefsEditor.putString("actdate",jsonObject.getString("actdate"));
                                 loginPrefsEditor.putString("expdate",jsonObject.getString("expdate"));
+                                loginPrefsEditor.putString("business_name",jsonObject.getString("business_name"));
                                 loginPrefsEditor.putString("username",jsonObject.getString("username"));
                                 loginPrefsEditor.putString("email",jsonObject.getString("email"));
                                 loginPrefsEditor.putInt("uid",jsonObject.getInt("user_id"));
                                 loginPrefsEditor.putInt("uid",jsonObject.getInt("user_employee"));
-                                loginPrefsEditor.apply();
+                                //Satus
+                                loginPrefsEditor.putInt("id",jsonObject.getInt("user_satus"));
+                                loginPrefsEditor.putInt("uid",jsonObject.getInt("user_status"));
+                                loginPrefsEditor.putString("status",jsonObject.getString("status"));
+
+
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

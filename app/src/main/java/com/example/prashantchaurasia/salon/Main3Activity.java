@@ -33,6 +33,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         //NAVHEADER
 
         loginPreferences = this.getSharedPreferences("loginprefs",MODE_PRIVATE);
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
         UsernameNavHeader = headerView.findViewById(R.id.user);
@@ -47,8 +48,6 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         Log.d("mail", "onCreate: "+EmailHeader);
         UserEmailNavHeader.setText(EmailHeader);
 
-
-
         // SHAREPEREFERENCE SAVE VALUES
         String LVisit = loginPreferences.getString("last_login"," ");
         TextView LastVisitCard = findViewById(R.id.lastVisitCard);
@@ -62,6 +61,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         TextView  ExpiryDate= findViewById(R.id.ExpiryDate);
         ExpiryDate.setText(ExDate);
         //ExpiryDate.setText(ExDate);
+        loginPreferences = this.getSharedPreferences("loginprefs",MODE_PRIVATE);
+        String BussinessName = loginPreferences.getString("business_name","");
+        TextView BussinessName1 = findViewById(R.id.businessName);
+        BussinessName1.setText(BussinessName);
 
 
 
@@ -75,6 +78,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         //cardViewQuickBill
         CardView cardViewQuickBill = (CardView) findViewById(R.id.cardViewQuickBill);
         CardView cardAttendance = (CardView) findViewById(R.id.cardAttendance);
+        CardView cardAddServices = (CardView) findViewById(R.id.CardAddServices);
 
         //Quick Bill
         cardViewQuickBill.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +100,15 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                 Intent intent = new Intent(Main3Activity.this, Attendance.class);
                 startActivity(intent);
 
+            }
+        });
+
+        cardAddServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent ServicesIntent = new Intent(Main3Activity.this,Services.class);
+                startActivity(ServicesIntent);
             }
         });
 
@@ -147,11 +160,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
-            SharedPreferences preferences = getSharedPreferences("saveLogin", Context.MODE_PRIVATE);
+            SharedPreferences preferences = getSharedPreferences("loginprefs", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
-           // editor.clear();
-            editor.remove("saveLogin");
-            editor.commit();
+            editor.putBoolean("saveLogin",false);
+            editor.apply();
             finish();
 
             return true;
@@ -168,6 +180,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
         if (id == R.id.nav_Home) {
             // Handle the camera action
+            startActivity(new Intent(Main3Activity.this,Main3Activity.class));
 
 
         }
@@ -175,7 +188,6 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         {
             Intent intent = new Intent(Main3Activity.this, BillForSale.class);
             startActivity(intent);
-
         }
         else if (id == R.id.nav_Billing)
         {

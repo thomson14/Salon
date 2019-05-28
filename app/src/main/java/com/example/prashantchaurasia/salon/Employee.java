@@ -6,7 +6,6 @@ import android.os.Parcelable;
 public class Employee implements Parcelable {
     private String name ,designation ,intime,outtime ,weekoff ,mobile ;
     private int eid,status,uid;
-
     public Employee(String name, String designation, String intime, String outtime, String weekoff, String mobile, int eid, int status, int uid) {
         this.name = name;
         this.designation = designation;

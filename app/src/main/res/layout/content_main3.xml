@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Main3Activity"
     tools:showIn="@layout/app_bar_main3"
-    android:background="#000000"
+    android:background="@color/black"
     >
 <ScrollView
     android:layout_width="match_parent"
@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
+
 
 
         <LinearLayout
@@ -33,6 +36,7 @@
                 android:id="@+id/cardViewQuickBill"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:elevation="8dp"
                 app:cardCornerRadius="10dp"
                 android:layout_margin="10dp">
@@ -41,7 +45,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Quick Bill" />
+                    android:text="Quick Bill"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="italic"/>
 
             </android.support.v7.widget.CardView>
 
@@ -50,6 +57,7 @@
                 android:id="@+id/cardAttendance"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:elevation="8dp"
                 app:cardCornerRadius="10dp"
                 android:layout_margin="10dp">
@@ -58,30 +66,68 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Attendance" />
+                    android:text="Attendance"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="italic"/>
 
 
             </android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
+                android:id="@+id/CardAddServices"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
-                android:elevation="8dp"
                 android:layout_margin="10dp"
+                android:elevation="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Add service" />
+                    android:text="Add service"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="italic" />
 
 
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
+// *******************************
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"
+
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:elevation="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp">
+
+
+            <TextView
+                android:id="@+id/businessName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Bussiness Name"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+//****************************************
 
 
         //MIDDLE CARDS
@@ -89,7 +135,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
 
      <!--       <GridLayout
                 android:layout_width="match_parent"
@@ -101,9 +148,10 @@
             //LAYOUT FIRST CARDS
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:background="@drawable/backgr">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card1"
@@ -115,13 +163,21 @@
                     app:cardBackgroundColor="@color/colorPrimaryDark"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_last_visit"
+                        android:layout_marginLeft="50dp"/>
+
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:text="Last Visit"
                         android:textColor="#000000"
-                        android:textSize="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
+                        android:textSize="20dp"
                         android:textStyle="italic" />
 
 
@@ -130,8 +186,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Last Visit"
-                        android:textColor="#000000"
+                        android:text="last visit"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="20dp"
                         android:textSize="20dp"
                         android:textStyle="italic"/>
 
@@ -148,6 +206,12 @@
                     app:cardBackgroundColor="@color/colorPrimaryDark"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_activate_form"
+                        android:layout_marginLeft="50dp"/>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -155,6 +219,7 @@
                         android:text="Activate Form"
                         android:textColor="#000000"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
                         android:textSize="20dp"
                         android:textStyle="italic" />
 
@@ -164,7 +229,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Activate Form"
+                        android:layout_marginLeft="20dp"
                         android:textColor="#000000"
+                        android:layout_marginTop="20dp"
                         android:textSize="20dp"
                         android:textStyle="italic" />
 
@@ -178,9 +245,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:background="@drawable/backgr"
+                android:layout_marginTop="20dp"
+                >
                 <android.support.v7.widget.CardView
                     android:id="@+id/card3"
                     android:layout_width="150dp"
@@ -190,23 +260,31 @@
                     app:cardBackgroundColor="@color/colorPrimaryDark"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_expiry"
+                        android:layout_marginLeft="50dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Expiry"
-                        android:layout_gravity="center_horizontal"
                         android:textColor="#000000"
-                        android:textSize="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
+                        android:textSize="20dp"
                         android:textStyle="italic" />
 
                     <TextView
                         android:id = "@+id/ExpiryDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="60dp"
-                        android:text="Expiry"
+                        android:layout_gravity="center"
+                        android:text="Activate Form"
+                        android:layout_marginLeft="20dp"
                         android:textColor="#000000"
+                        android:layout_marginTop="20dp"
                         android:textSize="20dp"
                         android:textStyle="italic" />
 
@@ -223,12 +301,19 @@
                     app:cardBackgroundColor="@color/colorPrimaryDark"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_expiry"
+                        android:layout_marginLeft="50dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:text="Expiry"
                         android:textColor="#000000"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
                         android:textSize="20dp"
                         android:textStyle="italic" />
 
@@ -241,9 +326,11 @@
             //LAYOUT THIRD CARDS
                <LinearLayout
                    android:layout_width="match_parent"
-                   android:layout_height="match_parent"
+                   android:layout_height="200dp"
                    android:orientation="horizontal"
-                   android:gravity="center_horizontal">
+                   android:gravity="center_horizontal"
+                   android:background="@drawable/backgr"
+                   android:layout_marginTop="20dp">
 
                    <android.support.v7.widget.CardView
                        android:id="@+id/card5"
@@ -255,15 +342,21 @@
                        app:cardCornerRadius="30dp">
 
 
+                       <ImageView
+                           android:layout_width="50dp"
+                           android:layout_height="40dp"
+                           android:src="@drawable/ic_total_customer"
+                           android:layout_marginLeft="50dp"/>
+
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:layout_gravity="center"
                            android:text="Total Customer"
                            android:textColor="#000000"
+                           android:layout_gravity="center_horizontal"
+                           android:layout_marginTop="40dp"
                            android:textSize="20dp"
                            android:textStyle="italic" />
-
 
                    </android.support.v7.widget.CardView>
 
@@ -277,12 +370,19 @@
                        app:cardBackgroundColor="@color/colorPrimaryDark"
                        app:cardCornerRadius="30dp">
 
+                       <ImageView
+                           android:layout_width="50dp"
+                           android:layout_height="40dp"
+                           android:src="@drawable/ic_service_available"
+                           android:layout_marginLeft="50dp"/>
+
                        <TextView
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:layout_gravity="center"
                            android:text="Service Available"
                            android:textColor="#000000"
+                           android:layout_gravity="center_horizontal"
+                           android:layout_marginTop="40dp"
                            android:textSize="20dp"
                            android:textStyle="italic" />
 
@@ -296,9 +396,11 @@
             //LAYOUT FOURTH CARDS
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:background="@drawable/backgr"
+                android:layout_marginTop="20dp">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/card7"
@@ -309,14 +411,21 @@
                     app:cardBackgroundColor="@color/colorPrimaryDark"
                     app:cardCornerRadius="30dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_stock_item"
+                        android:layout_marginLeft="50dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:text="Stock Item"
                         android:textColor="#000000"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
                         android:textSize="20dp"
-                        android:textStyle="italic" />
+                        android:textStyle="italic"/>
 
 
                 </android.support.v7.widget.CardView>
@@ -331,12 +440,19 @@
                     app:cardCornerRadius="30dp"
                     android:layout_margin="20dp">
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_total_customer"
+                        android:layout_marginLeft="50dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:text="Today Visitor"
                         android:textColor="#000000"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="40dp"
                         android:textSize="20dp"
                         android:textStyle="italic" />
 

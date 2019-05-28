@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
 
 public class Attendance extends AppCompatActivity implements View.OnClickListener {
 
-   EditText txtDate,txtTime;
+   TextView txtDate,txtTime;
    Button btnDatePicker,btnTimePicker;
     private int mYear, mMonth, mDay, mHour, mMinute;
 
@@ -24,7 +25,7 @@ public class Attendance extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
-        txtDate=(EditText)findViewById(R.id.editTextDate);
+        txtDate=(TextView) findViewById(R.id.editTextDate);
      //   txtTime=(EditText)findViewById(R.id.editTextTime);
 
 

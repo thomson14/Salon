@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -98,7 +99,9 @@ public class Services extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //JSON METHOD    **String Request**
+
+
+        //JSON METHOD   **String Request**
         JSONDATA();
 
     }
@@ -142,6 +145,8 @@ public class Services extends AppCompatActivity {
 
                             Log.d("getString","getString"+getServices.getName());
                             service.add(getServices);
+
+
                             //Log.d("ArraylistService","ArrayListService"+service);
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -149,6 +154,8 @@ public class Services extends AppCompatActivity {
                     }
                     serviceAdapter = new ServiceAdapter(getApplicationContext(),service);
                     recyclerView.setAdapter(serviceAdapter);
+
+                    serviceAdapter.notifyDataSetChanged();
                     // Log.d("serviceAdapter","serviceAdapter"+recyclerView);
                 }catch (Exception e){
                     e.printStackTrace();
@@ -174,7 +181,7 @@ public class Services extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-  /*  @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.search_services,menu);
@@ -186,19 +193,21 @@ public class Services extends AppCompatActivity {
        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
            @Override
            public boolean onQueryTextSubmit(String s) {
+
+              // serviceAdapter.getFilter().filter(s);
                return false;
            }
 
            @Override
            public boolean onQueryTextChange(String s) {
 
-            // serviceAdapter.getFilter().filter(s);
+               Toast.makeText(Services.this, s, Toast.LENGTH_SHORT).show();
                return false;
            }
        });
 
         return true;
-    }*/
+    }
 }
 
 

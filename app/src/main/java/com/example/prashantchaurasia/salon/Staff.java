@@ -31,6 +31,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 public class Staff extends AppCompatActivity {
 
@@ -51,8 +52,6 @@ public class Staff extends AppCompatActivity {
         Log.d("check", "onCreate: "+String.valueOf(sharedPreferences.getInt("uid",-1)));
 
         SearchStaff = findViewById(R.id.searchView);
-
-
         StaffRefresh = findViewById(R.id.swipeToRefreshStaff);
 
         StaffRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -67,8 +66,6 @@ public class Staff extends AppCompatActivity {
                 }, 2000);
             }
         });
-
-
         btnAddStaff = (Button)  findViewById(R.id.btnAddSTAFF);
         btnAddStaff.setOnClickListener(new View.OnClickListener()
         {
@@ -79,8 +76,8 @@ public class Staff extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         JsonEmployee();
+        salonSatus();
     }
 
 
@@ -90,7 +87,6 @@ public class Staff extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHelper.URLEmployee, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
                 Log.d("ResponseEmployee","response"+response);
                 ArrayList<Employee> ArrayEmployee = new ArrayList<>();
                 JSONArray jsonArray = null;
@@ -102,7 +98,6 @@ public class Staff extends AppCompatActivity {
                 try{
                     for (int i=0 ; i < jsonArray.length() ; i++ ){
                         try{
-
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             Employee employee = new Employee(
                                     jsonObject.getString("name"),
@@ -114,6 +109,7 @@ public class Staff extends AppCompatActivity {
                                     jsonObject.getInt("eid"),
                                     jsonObject.getInt("status"),
                                     jsonObject.getInt("uid")
+
                             );
 
                             ArrayEmployee.add(employee);
@@ -130,12 +126,10 @@ public class Staff extends AppCompatActivity {
 
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 Log.d("on error", "onErrorResponse: "+error.getMessage());
             }
         }){
@@ -148,6 +142,45 @@ public class Staff extends AppCompatActivity {
             }
         };
 
+        RequestQueue requestQueue = Volley.newRequestQueue(Staff.this);
+        requestQueue.add(stringRequest);
+    }
+
+    //Salon Employee Status Change//////
+
+    public void salonSatus(){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLHelper.SalonEmployeeStatus, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("ResponseStatus","response"+response);
+
+                JSONObject jsonObject = null;
+                try {
+                    jsonObject = new JSONObject(response);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("on error", "onErrorResponse: "+error.getMessage());
+
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("id",String.valueOf(sharedPreferences.getInt("id",-1)));
+                params.put("uid",String.valueOf(sharedPreferences.getInt("uid",-1)));
+                params.put("status",sharedPreferences.getString("status",""));
+                return params;
+            }
+        };
         RequestQueue requestQueue = Volley.newRequestQueue(Staff.this);
         requestQueue.add(stringRequest);
     }

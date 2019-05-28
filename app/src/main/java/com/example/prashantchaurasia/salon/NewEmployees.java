@@ -12,6 +12,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
 
         AutoCompleteTextView autoWeekly;
         Button btnSubmit,btnClose;
-        EditText edtOutTime,edtInTime;
+        TextView edtOutTime,edtInTime;
         EditText employeeName,ContactMobile,designation;
         private int mYear, mMonth, mDay, mHour, mMinute;
 
@@ -42,10 +43,10 @@ public class NewEmployees extends AppCompatActivity implements AdapterView.OnIte
         designation = findViewById(R.id.designation);
 
 
-        edtInTime = (EditText) findViewById(R.id.edtInTime);
+        edtInTime = (TextView) findViewById(R.id.edtInTime);
         edtInTime.setOnClickListener(this);
 
-        edtOutTime = (EditText) findViewById(R.id.edtOutTime);
+        edtOutTime = (TextView) findViewById(R.id.edtOutTime);
         edtOutTime.setOnClickListener(this);
 
 

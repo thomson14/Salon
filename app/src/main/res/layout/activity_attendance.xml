@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".Attendance">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,27 +21,414 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Staff Attendance"
+        android:textColor="@color/white"
         android:textSize="30sp"
+        android:textStyle="bold"
         android:gravity="center_horizontal"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Date"
         android:textSize="20sp"/>
 
 
-        <EditText
+        <TextView
             android:singleLine="true"
             android:id="@+id/editTextDate"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:focusable="false"
-            android:hint="Date"
+            android:text="Date"
+            android:textColor="@color/white"
             android:inputType="date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        //Adding Adding Staff Attendance
+
+        //FIRST
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:elevation="30dp"
+            app:cardBackgroundColor="@color/DarkGreen"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="20dp">
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:rowCount="4"
+                android:columnCount="2"
+                >
+
+                //Service Name
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staff:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/txtStaff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+                //For Male
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="number"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+                //DESIGNATION
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtInTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="your choice"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+
+                //For Male Child
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtOutTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For Male Child"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+
+            </GridLayout>
+        </android.support.v7.widget.CardView>
+
+
+        //SECOND
+
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:elevation="30dp"
+            app:cardBackgroundColor="@color/DarkGreen"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="20dp">
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:columnCount="2"
+                android:rowCount="4">
+
+                //Service Name
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staff:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtStaff2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Name"
+                    android:textColor="@color/white" />
+                //For Male
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtStatus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="number"
+                    android:textColor="@color/white" />
+
+                //DESIGNATION
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/txtInTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="your choice"
+                    android:textColor="@color/white" />
+
+
+                //For Male Child
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/txtOutTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="For Male Child"
+                    android:textColor="@color/white" />
+
+
+            </GridLayout>
+        </android.support.v7.widget.CardView>
+
+        //THIRD CARD
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:elevation="30dp"
+            app:cardBackgroundColor="@color/DarkGreen"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="20dp">
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:columnCount="2"
+                android:rowCount="4">
+
+                //Service Name
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staff:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtStaff3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Name"
+                    android:textColor="@color/white" />
+                //For Male
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="number"
+                    android:textColor="@color/white" />
+
+                //DESIGNATION
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/txtInTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="your choice"
+                    android:textColor="@color/white" />
+
+
+                //For Male Child
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/txtOutTime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="For Male Child"
+                    android:textColor="@color/white" />
+
+
+            </GridLayout>
+        </android.support.v7.widget.CardView>
+
+   //FOURTH
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:elevation="30dp"
+            app:cardBackgroundColor="@color/DarkGreen"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="20dp">
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:rowCount="4"
+                android:columnCount="2"
+                >
+
+                //Service Name
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staff:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/txtStaff4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+                //For Male
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:id="@+id/txtStatus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="number"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+                //DESIGNATION
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtInTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="your choice"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+
+                //For Male Child
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Out Time:"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtOutTime4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For Male Child"
+                    android:padding="8dp"
+                    android:textColor="@color/white"
+                    />
+
+
+            </GridLayout>
+        </android.support.v7.widget.CardView>
+
+
+
     </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

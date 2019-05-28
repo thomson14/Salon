@@ -45,7 +45,7 @@
                 android:padding="8dp"
                 android:textColor="#FFF"
                 android:layout_marginRight="10dp"
-                android:drawableLeft="@drawable/ic_person_green_24dp"
+                android:drawableLeft="@drawable/ic_person_username"
                 android:drawablePadding="12dp"
                 android:layout_marginTop="12dp"
                 />
@@ -59,7 +59,7 @@
                 android:padding="8dp"
                 android:textColor="#FFF"
                 android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/ic_vpn_key_green_24dp"
+                android:drawableLeft="@drawable/ic_password"
                 android:drawablePadding="12dp"
                 android:inputType="textPassword" />
 
@@ -89,6 +89,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="center_horizontal"
+                android:layout_marginTop="30dp"
                 >
 
                     <Button
@@ -120,7 +121,7 @@
 
 
             //FORGOT PASSWORD
-            <Button
+           <!-- <Button
                 android:id="@+id/btnForget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,7 +130,7 @@
                 android:layout_marginTop="50dp"
                 android:textColor="#fff"
                 android:background="@color/colorPrimaryDark"
-                />
+                />-->
 
 
 

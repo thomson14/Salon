@@ -108,11 +108,11 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="30dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/edtInTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="In Time"
+                android:text="In Time"
                 android:textColorHint="@color/white"
                 android:padding="8dp"
                 android:textColor="@color/white"
@@ -130,12 +130,11 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="30dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/edtOutTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="out Time"
-                android:textColorHint="@color/white"
+                android:text="out Time"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:layout_marginRight="10dp"
@@ -157,7 +156,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter week"
-                android:textColorHint="@color/white"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:layout_marginRight="10dp"

@@ -35,6 +35,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
 
     Spinner spinnerServices,spinnerFor,spinnerStaff,spinnerQuantity,spinnerMode,spinnerBillStatus;
     Button btnBillforSale,onAddFieldButton,QuickBillSubmit;
-    EditText edtDate;
+    TextView edtDate;
     Spinner ForSecond, ServicesSecond;
     TextView RateSecond;
     SharedPreferences loginPreferences,servicesPreferences;
@@ -71,8 +72,8 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
    // String[] services = {};
    // String[] staff  = {};
     String[] quantity = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"};
-    String[] mode = {};
-    String[] billStatus = {};
+    String[] mode = {"Case","Card","Cheque"};
+    String[] billStatus = {"Done","Pending"};
 
 
     @Override
@@ -101,7 +102,7 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
 
 
              btnBillforSale = (Button)  findViewById(R.id.btnBillforSale);
-             edtDate = (EditText)  findViewById(R.id.edtdate);
+             edtDate = (TextView)  findViewById(R.id.edtdate);
              edtDate.setOnClickListener(this);
 
              //  BUTTON FOR BILL FOR SALE
@@ -132,6 +133,7 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
                  DialogDiscount = dialog.findViewById(R.id.Discount);
                  DialogTotal =dialog.findViewById(R.id.Total);
                  QuickBillSubmit = dialog.findViewById(R.id.QuickBill_Submit);
+
                 QuickBillSubmit.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
@@ -332,19 +334,45 @@ public class QuickBill extends AppCompatActivity implements AdapterView.OnItemSe
 
 
 
-     /*   //ADAPTER FOR MODE
+       //ADAPTER FOR MODE
         spinnerMode = (Spinner) findViewById(R.id.spinnerMode);
         ArrayAdapter arrayAdapter4 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,mode);
         arrayAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMode.setAdapter(arrayAdapter4);
-        spinnerMode.setOnItemSelectedListener(this);
+        spinnerMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = (TextView)parent.getChildAt(0);
+                textView.setTextColor(getResources().getColor(R.color.white));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //  END**********************************************************************MODE //
 
         //ADAPTER FOR BillStatus
         spinnerBillStatus = (Spinner) findViewById(R.id.spinnerBillStatus);
         ArrayAdapter arrayAdapter5 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,billStatus);
         arrayAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBillStatus.setAdapter(arrayAdapter5);
-        spinnerBillStatus.setOnItemSelectedListener(this);*/
+        spinnerBillStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                TextView textView = (TextView)parent.getChildAt(0);
+              textView.setTextColor(getResources().getColor(R.color.white));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //  END**********************************************************************BILL STATUS //
 
     }
     @Override
